@@ -1,0 +1,68 @@
+P17AS03  DFHMSD TYPE=&SYSPARM,                                         C
+               LANG=COBOL,                                             C
+               MODE=INOUT,                                             C
+               STORAGE=AUTO,                                           C
+               TIOAPFX=YES                                              
+EMS      DFHMDI CTRL=(FREEKB),                                         C
+               SIZE=(24,80),                                           C
+               TIOAPFX=YES                                              
+DATE     DFHMDF ATTRB=(PROT,BRT),                                      C
+               INITIAL='DATE: DD/MM/YY',                               C
+               LENGTH=14,                                              C
+               POS=(1,2)                                                
+TIME     DFHMDF ATTRB=(PROT,BRT),                                      C
+               INITIAL='TIME: HH:MM:SS',                               C
+               LENGTH=14,                                              C
+               POS=(1,64)                                               
+EMS      DFHMDF ATTRB=(PROT,BRT),                                      C
+               INITIAL='EMPLOYEE MANAGEMENT SYSTEM',                   C
+               LENGTH=26,                                              C
+               POS=(2,25)                                               
+CP       DFHMDF ATTRB=(PROT,BRT),                                      C
+               INITIAL='1 - CALCULATOR PROGRAM',                       C
+               LENGTH=21,                                              C
+               POS=(4,20)                                               
+EI       DFHMDF ATTRB=(PROT,BRT),                                      C
+               INITIAL='2 - EMPLOYEE INQUERY',                         C
+               LENGTH=19,                                              C
+               POS=(5,20)                                               
+EM       DFHMDF ATTRB=(PROT,BRT),                                      C
+               INITIAL='3 - EMPLOYEE MAINTAINANCE',                    C
+               LENGTH=24,                                              C
+               POS=(6,20)                                               
+EB       DFHMDF ATTRB=(PROT,BRT),                                      C
+               INITIAL='4 - EMPLOYEE BROWSE',                          C
+               LENGTH=18,                                              C
+   File  Edit  Edit_Settings  Menu  Utilities  Compilers  Test  Help            
+ ¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢¢
+ EDIT       DSRP017.CICS.BMS(P17AS03) - 01.03               Columns 00001 00072 
+ Command ===>                                                  Scroll ===> CSR  
+ 000036                POS=(7,20)                                               
+ 000037 OPTION   DFHMDF ATTRB=(UNPROT,IC),                                     C
+ 000038                INITIAL='0',                                            C
+ 000039                LENGTH=1,                                               C
+ 000040                POS=(8,20)                                               
+ 000041          DFHMDF ATTRB=(PROT,BRT),                                      C
+ 000042                INITIAL='- ENTER OPTION TO ESCAPE PROGRAM',             C
+ 000043                LENGTH=30,                                              C
+ 000044                POS=(10,22)                                              
+ 000045 MESSAGE  DFHMDF ATTRB=(PROT,BRT),                                      C
+ 000046                INITIAL='PLEASE INPUT NUMERIC FIELD',                   C
+ 000047                LENGTH=50,                                              C
+ 000048                POS=(23,2)                                               
+ 000049          DFHMDF ATTRB=(PROT,BRT),                                      C
+ 000050                INITIAL='ENTER = PROCESS;                               C
+ 000051                LENGTH=15,                                              C
+ 000052                POS=(24,2)                                               
+ 000053          DFHMDF ATTRB=(PROT,BRT),                                      C
+  F1=Help      F2=Split     F3=Exit      F4=S&S       F5=Rfind     F6=Rchange   
+  F7=Up        F8=Down      F9=Swap     F10=Left     F11=Right    F12=Cancel    
+               INITIAL='PF3 = EXIT',                                   C
+               LENGTH=10,                                              C
+               POS=(24,68)                                              
+DUMMY    DFHMDF ATTRB=(PROT,BRT,FSET),                                 C
+               INITIAL=' ',                                            C
+               LENGTH=1,                                               C
+               POS=(24,79)                                              
+         DFHMSD TYPE=FINAL                                              
+         END                                                            
